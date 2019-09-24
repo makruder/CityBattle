@@ -62,9 +62,9 @@ public class Battle : MonoBehaviour
 
         if (character == playerHuman)
         {
-            if(character.hp > 400) character.hp = 400;
+            if(character.hp > 700) character.hp = 700;
 
-             if(character.hp > 200 && character.hp < 300)
+             if(character.hp > 200 && character.hp < 450)
              {
                  character.lvl = 2;
                  character.power = 25;
@@ -72,7 +72,7 @@ public class Battle : MonoBehaviour
              {
                  character.lvl = 1;
                  character.power = 20;
-             }else if (character.hp > 300 && character.hp < 400 )
+             }else if (character.hp > 450 && character.hp <= 700 )
              {
                  character.lvl = 3;
                  character.power = 30;
@@ -80,9 +80,9 @@ public class Battle : MonoBehaviour
         } 
         else
         {
-            if(character.hp > 300) character.hp = 300;
+            if(character.hp > 450) character.hp = 450;
 
-             if(character.hp > 100 && character.hp < 200)
+             if(character.hp > 100 && character.hp < 300)
              {
                  character.lvl = 2;
                  character.power = 15;
@@ -90,12 +90,53 @@ public class Battle : MonoBehaviour
              {
                  character.lvl = 1;
                  character.power = 10;
-             }else if (character.hp > 200 && character.hp < 300 )
+             }else if (character.hp > 300 && character.hp < 450 )
              {
                  character.lvl = 3;
                  character.power = 20;
              }
         }
+    }
+
+    Character choseCharacter(int number)
+    {
+        Character myCharacterTmp = new Character();
+        switch (number)
+            {
+            //characters
+            // 0 - drone
+            // 1 - human
+            // 2 - animal
+                case 0:
+                myCharacterTmp = playerDrone;
+                break;
+
+                case 1:
+                myCharacterTmp = playerHuman;
+                break;
+
+                case 2:
+                myCharacterTmp = playerAnimal;
+                break;
+
+                default:
+                myCharacterTmp = playerHuman;
+                break;
+            }
+
+            return myCharacterTmp;
+    }
+
+    void AddResult(Character character)
+    {
+        if(!character.isActive)
+                  {
+                      AddCharacter(character);
+                  } 
+                  else
+                  {
+                      AddHp(character);                      
+                  }
     }
 
     public void GetTurn(int typeTurn, int first, int second, int three)
@@ -108,94 +149,16 @@ public class Battle : MonoBehaviour
         switch (typeTurn)
         {
             case 0:
-            //characters
-            // 0 - drone
-            // 1 - human
-            // 2 - animal
+            
 
-            Character myCharacter1 = new Character();
+            Character myCharacter1 = choseCharacter(first); 
+            Character myCharacter2 = choseCharacter(second); 
+            Character myCharacter3 = choseCharacter(three);           
 
-            switch (first)
-            {
-                case 0:
-                myCharacter1 = playerDrone;
-                break;
-
-                case 1:
-                myCharacter1 = playerHuman;
-                break;
-
-                case 2:
-                myCharacter1 = playerAnimal;
-                break;
-            }
-
-            Character myCharacter2 = new Character();
-
-            switch (second)
-            {
-                case 0:
-                myCharacter2 = playerDrone;
-                break;
-
-                case 1:
-                myCharacter2 = playerHuman;
-                break;
-
-                case 2:
-                myCharacter2 = playerAnimal;
-                break;
-            }
-
-             Character myCharacter3 = new Character();
-
-            switch (three)
-            {
-                case 0:
-                myCharacter3 = playerDrone;
-                break;
-
-                case 1:
-                myCharacter3 = playerHuman;
-                break;
-
-                case 2:
-                myCharacter3 = playerAnimal;
-                break;
-            }
-
-
-
-                  if(!myCharacter1.isActive)
-                  {
-                      AddCharacter(myCharacter1);
-                  } 
-                  else
-                  {
-                      AddHp(myCharacter1);                      
-                  }
-
-                  if(!myCharacter2.isActive)
-                  {
-                      AddCharacter(myCharacter2);
-                  } 
-                  else
-                  {
-                      AddHp(myCharacter2);                      
-                  }
-
-                  if(!myCharacter3.isActive)
-                  {
-                      AddCharacter(myCharacter3);
-                  } 
-                  else
-                  {
-                      AddHp(myCharacter3);                      
-                  }
-                
-
-
-
+             AddResult(myCharacter1);
+             AddResult(myCharacter2);
+             AddResult(myCharacter3);
+             
             break;
 
             case 1:
