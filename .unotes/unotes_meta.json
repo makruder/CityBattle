@@ -1,0 +1,83 @@
+{
+  "name": "",
+  "isOrdered": true,
+  "folders": {
+    "Assets": {
+      "name": "Assets",
+      "isOrdered": true,
+      "folders": {
+        "Resources": {
+          "name": "Resources",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "Scenes": {
+          "name": "Scenes",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "Scripts": {
+          "name": "Scripts",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        }
+      },
+      "files": {}
+    },
+    "Library": {
+      "name": "Library",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "Logs": {
+      "name": "Logs",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "obj": {
+      "name": "obj",
+      "isOrdered": true,
+      "folders": {
+        "Debug": {
+          "name": "Debug",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        }
+      },
+      "files": {}
+    },
+    "Packages": {
+      "name": "Packages",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "ProjectSettings": {
+      "name": "ProjectSettings",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "Temp": {
+      "name": "Temp",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "Notes": {
+      "name": "Notes",
+      "isOrdered": true,
+      "folders": {},
+      "files": {
+        "HowTo": 0
+      }
+    }
+  },
+  "files": {}
+}
