@@ -65,11 +65,11 @@ public class SelectType : MonoBehaviour
                     defendButton.transform.localScale = new Vector3(1.2f,1.2f,1.2f);
                     attackButton.transform.localScale = new Vector3(1f,1f,1f);
 
-                    firstRandom.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Icons/health");
+                    firstRandom.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Icons/freeze");
                     secondRandom.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Icons/shield");
                     thirdRandom.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Icons/vampire");
 
-                    oneBox ="health";
+                    oneBox ="freeze";
                     twoBox ="shield";
                     threeBox = "vampire";
 
@@ -134,11 +134,11 @@ public class SelectType : MonoBehaviour
 
     IEnumerator RandItems1()
     {
-        Debug.Log("Start corutine 1");
+       // Debug.Log("Start corutine 1");
         var tmp = 0;
-        while (tmp<10 && randFlag == true)
+        while (tmp<100 && randFlag == true)
         {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.1f);
         string onestr = oneBox;
         int one = Random.Range(0,3);
         switch (one)
@@ -163,24 +163,24 @@ public class SelectType : MonoBehaviour
 
 
         firstRandom.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Icons/"+onestr);
-        Debug.Log(onestr);
+       // Debug.Log(onestr);
         tmp += 1;
         firstIcon = one;
         
         }
         randFlag = false;
-        Debug.Log("End corutine 1");
+       // Debug.Log("End corutine 1");
 
 
     }
 
     IEnumerator RandItems2()
     {
-        Debug.Log("Start corutine 2");
+       // Debug.Log("Start corutine 2");
         var tmp = 0;
-        while (tmp<20 && randFlag == true)
+        while (tmp<100 && randFlag == true)
         {
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(.1f);
         string onestr = oneBox;
         int one = Random.Range(0,3);
         switch (one)
@@ -205,21 +205,21 @@ public class SelectType : MonoBehaviour
 
 
         secondRandom.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Icons/"+onestr);
-        Debug.Log(onestr);
+       // Debug.Log(onestr);
         tmp += 1;
         
         secondIcon= one;
         
         }
         randFlag = false;
-        Debug.Log("End corutine 2");
+       // Debug.Log("End corutine 2");
 
     }
 
 
     IEnumerator RandItems3()
     {
-        Debug.Log("Start corutine 3");
+       // Debug.Log("Start corutine 3");
         var tmp = 0;
         while (tmp<100 && randFlag == true)
         {
@@ -248,13 +248,13 @@ public class SelectType : MonoBehaviour
 
 
         thirdRandom.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Icons/"+onestr);
-        Debug.Log(onestr);
+       // Debug.Log(onestr);
         tmp += 1;
        
         threeIcon= one;
         }
         randFlag = false;
-        Debug.Log("End corutine 3");
+       // Debug.Log("End corutine 3");
 
     }
 

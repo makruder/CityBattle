@@ -22,7 +22,10 @@ public class Character : MonoBehaviour
 
     void Update() 
     {
+        if(isActive == true)
+        {
         hpText.text = hp.ToString();
+        }
     }
 
     

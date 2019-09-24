@@ -55,6 +55,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Battle.cs" />
      <Compile Include="Assets\Scripts\Character.cs" />
+     <Compile Include="Assets\Scripts\Defenders.cs" />
      <Compile Include="Assets\Scripts\LogMessage.cs" />
      <Compile Include="Assets\Scripts\SelectType.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">

@@ -17,6 +17,17 @@ public class Battle : MonoBehaviour
     public Character enemyAnimal;
     public Character enemySecondDrone;
     public Character enemySecondAnimal;
+
+    [Header("Player's Defend")]
+    public Defenders playerShield;
+    private Defenders playerFreeze;
+    private Defenders playerVampire;
+
+
+    [Header("Enemy's Defend")]
+    public Defenders enemyShield;
+    private Defenders enemyFreeze;
+    private Defenders enemyVampire;
     
     void Start()
     {
@@ -33,6 +44,9 @@ public class Battle : MonoBehaviour
         players.Add(enemyAnimal);
         players.Add(enemySecondDrone);
         players.Add(enemySecondAnimal);
+
+        playerFreeze = new Defenders("Заморозка", 1, 1, false);
+        playerVampire = new Defenders("Вампиризм",2,50,false);
         
     }
 
@@ -98,7 +112,7 @@ public class Battle : MonoBehaviour
         }
     }
 
-    Character choseCharacter(int number)
+    Character chooseCharacter(int number)
     {
         Character myCharacterTmp = new Character();
         switch (number)
@@ -127,7 +141,39 @@ public class Battle : MonoBehaviour
             return myCharacterTmp;
     }
 
-    void AddResult(Character character)
+
+    Defenders chooseDefend(int number)
+    {
+        Defenders myDefendTmp = new Defenders();
+        switch (number)
+            {
+            //characters
+            // 0 - drone
+            // 1 - human
+            // 2 - animal
+                case 0:
+                myDefendTmp = playerShield;
+                break;
+
+                case 1:
+                
+                myDefendTmp = playerFreeze;
+                break;
+
+                case 2:
+                
+                myDefendTmp = playerVampire;
+                break;
+
+                default:
+                myDefendTmp = playerShield;
+                break;
+            }
+
+            return myDefendTmp;
+    }
+
+    void AddCharacterResult(Character character)
     {
         if(!character.isActive)
                   {
@@ -137,6 +183,33 @@ public class Battle : MonoBehaviour
                   {
                       AddHp(character);                      
                   }
+    }
+
+    void AddDefendResult(Defenders defend)
+    {
+        if(defend == playerShield)
+        {
+            if(!playerShield.isActive)
+            {
+                playerShield.countDef = 50;
+                playerShield.isActive = true;
+                playerShield.gameObject.SetActive(true);
+            }
+            else
+            {
+                playerShield.countDef += 50;
+                if(playerShield.countDef >=200) playerShield.countDef = 200;
+            }
+            Debug.Log("set shield");
+        }
+        else if (defend == playerFreeze)
+        {
+            Debug.Log("freeze enemy");
+        }
+        else
+        {
+            Debug.Log("vamp enemy");
+        }
     }
 
     public void GetTurn(int typeTurn, int first, int second, int three)
@@ -151,18 +224,30 @@ public class Battle : MonoBehaviour
             case 0:
             
 
-            Character myCharacter1 = choseCharacter(first); 
-            Character myCharacter2 = choseCharacter(second); 
-            Character myCharacter3 = choseCharacter(three);           
+            Character myCharacter1 = chooseCharacter(first); 
+            Character myCharacter2 = chooseCharacter(second); 
+            Character myCharacter3 = chooseCharacter(three);           
 
-             AddResult(myCharacter1);
-             AddResult(myCharacter2);
-             AddResult(myCharacter3);
+             AddCharacterResult(myCharacter1);
+             AddCharacterResult(myCharacter2);
+             AddCharacterResult(myCharacter3);
              
             break;
 
             case 1:
-            //
+
+
+            Defenders myDefend1 = chooseDefend(first); 
+            Defenders myDefend2 = chooseDefend(second);
+            Defenders myDefend3 = chooseDefend(three);
+            Debug.Log(myDefend1.nameDef +" "+myDefend2.nameDef+" "+myDefend3.nameDef);
+
+            AddDefendResult(myDefend1);
+            AddDefendResult(myDefend2);
+            AddDefendResult(myDefend3);
+
+
+
             break;
 
             case 2:
