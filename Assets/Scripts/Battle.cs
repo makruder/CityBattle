@@ -36,14 +36,66 @@ public class Battle : MonoBehaviour
         
     }
 
-    void AddCharacter(Character character, int hp, int power, int lvl)
+    void AddCharacter(Character character)
     {
-        character.hp = hp;
-        character.lvl = lvl;
-        character.power = power;
+        if (character == playerHuman)
+        {
+        character.hp = 200;
+        character.power = 15;
+        }
+        else
+        {
+          character.hp = 100;  
+          character.power = 10;
+        }
+        
+        character.lvl = 1;        
         character.isActive = true;
         character.gameObject.SetActive(true);
 
+    }
+
+    void AddHp(Character character)
+    {
+        character.hp += 100;
+        
+
+        if (character == playerHuman)
+        {
+            if(character.hp > 400) character.hp = 400;
+
+             if(character.hp > 200 && character.hp < 300)
+             {
+                 character.lvl = 2;
+                 character.power = 25;
+             } else if (character.hp < 200 )
+             {
+                 character.lvl = 1;
+                 character.power = 20;
+             }else if (character.hp > 300 && character.hp < 400 )
+             {
+                 character.lvl = 3;
+                 character.power = 30;
+             }
+        } 
+        else
+        {
+            if(character.hp > 300) character.hp = 300;
+
+             if(character.hp > 100 && character.hp < 200)
+             {
+                 character.lvl = 2;
+                 character.power = 15;
+             } else if (character.hp < 100 )
+             {
+                 character.lvl = 1;
+                 character.power = 10;
+             }else if (character.hp > 200 && character.hp < 300 )
+             {
+                 character.lvl = 3;
+                 character.power = 20;
+             }
+        }
     }
 
     public void GetTurn(int typeTurn, int first, int second, int three)
@@ -114,129 +166,32 @@ public class Battle : MonoBehaviour
 
 
 
-                   if (first != second && first != three)
-                   {
-                      if(myCharacter1.isActive)
-                      {
-                          myCharacter1.hp += 100;
-                      } 
-                      else
-                      {
-                          AddCharacter(myCharacter1,100,5,1);
-                      }
+                  if(!myCharacter1.isActive)
+                  {
+                      AddCharacter(myCharacter1);
+                  } 
+                  else
+                  {
+                      AddHp(myCharacter1);                      
+                  }
 
-                      ////////////////////////////////
-                      if(myCharacter2.isActive)
-                      {
-                          myCharacter2.hp += 100;
-                      } 
-                      else
-                      {
-                          AddCharacter(myCharacter2,100,5,1);
-                      }
-                      /////////////////////////////////
-                      if(myCharacter3.isActive)
-                      {
-                          myCharacter3.hp += 100;
-                      } 
-                      else
-                      {
-                          AddCharacter(myCharacter3,100,5,1);
-                      }
+                  if(!myCharacter2.isActive)
+                  {
+                      AddCharacter(myCharacter2);
+                  } 
+                  else
+                  {
+                      AddHp(myCharacter2);                      
+                  }
 
-                      ///////////
-                      ///////////
-                      ///////////
-
-
-                      
-
-
-
-
-
-
-                   }
-                   else if (first == second && first == three)
-                   {
-                       
-                          AddCharacter(myCharacter1,300,15,3);                      
-                   }
-
-
-
-                   else if (first != second && first == three)
-                   {
-                       
-                           
-
-
-                       if(myCharacter1.isActive)
-                      {
-                          myCharacter1.hp += 200;
-                      } 
-                      else
-                      {
-                          AddCharacter(myCharacter1,200,5,2);
-                      } 
-
-
-                      if(myCharacter2.isActive)
-                      {
-                          
-                          myCharacter2.hp += 100;   
-                      }    
-                      else
-                      {
-                          AddCharacter(myCharacter2,100,15,1); 
-                      }                
-                   }
-                   else if(second == three && first != second)
-                      {
-                          if(myCharacter2.isActive)
-                      {                          
-                        myCharacter2.hp += 200;
-                      } 
-                      else
-                      {
-                          AddCharacter(myCharacter2,200,5,2);
-                      }
-
-
-                        if(myCharacter1.isActive)
-                      {
-                          myCharacter1.hp += 100;
-                      } 
-                      else
-                      {
-                          AddCharacter(myCharacter1,100,5,1);
-                      }
-
-                      }
-
-                      else if(first == second && second != three)
-                      {
-
-                          if(myCharacter1.isActive)
-                      {
-                          myCharacter1.hp += 200;
-                      } 
-                      else
-                      {
-                          AddCharacter(myCharacter1,200,5,2);
-                      }
-
-
-                      if(myCharacter3.isActive)
-                      {
-                          myCharacter3.hp += 100;
-                      } 
-                      else
-                      {
-                          AddCharacter(myCharacter3,100,5,1);
-                      }
-
-                      }
+                  if(!myCharacter3.isActive)
+                  {
+                      AddCharacter(myCharacter3);
+                  } 
+                  else
+                  {
+                      AddHp(myCharacter3);                      
+                  }
                 
 
 
