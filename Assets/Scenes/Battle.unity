@@ -412,8 +412,9 @@ GameObject:
   - component: {fileID: 70447718}
   - component: {fileID: 70447720}
   - component: {fileID: 70447719}
+  - component: {fileID: 70447721}
   m_Layer: 5
-  m_Name: Text
+  m_Name: BattleTimer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -471,7 +472,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Battle
+  m_Text: "10 \u0441\u0435\u043A\u0443\u043D\u0434"
 --- !u!222 &70447720
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -480,6 +481,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 70447717}
   m_CullTransparentMesh: 0
+--- !u!114 &70447721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70447717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: deed47dd3fd07d243af5753a3debb0cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &73631604
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,6 +649,7 @@ GameObject:
   - component: {fileID: 111737708}
   - component: {fileID: 111737710}
   - component: {fileID: 111737709}
+  - component: {fileID: 111737711}
   m_Layer: 5
   m_Name: 1st
   m_TagString: Untagged
@@ -699,6 +713,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 111737707}
   m_CullTransparentMesh: 0
+--- !u!114 &111737711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111737707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13877f12cadcb2846aed9256502408c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  card: {fileID: 11400000, guid: 59707c214ef6d3040ba5ee1aaa8c9d72, type: 2}
+  attacksCards:
+  - {fileID: 11400000, guid: 379c5998b5d3e61489e84f5345c3445c, type: 2}
+  - {fileID: 11400000, guid: 3bdc02400667e904c9105bd49f85c597, type: 2}
+  - {fileID: 11400000, guid: df964aec3435c8445b2ab3f63a9a14fd, type: 2}
+  charactersCards:
+  - {fileID: 11400000, guid: 59707c214ef6d3040ba5ee1aaa8c9d72, type: 2}
+  - {fileID: 11400000, guid: 1c7baefe85328a640aff67821246453e, type: 2}
+  - {fileID: 11400000, guid: a1092298daaa9ea40aac7027ff1ec782, type: 2}
+  defrndersCards:
+  - {fileID: 11400000, guid: 4b4e40db79b932f43bf90aa6b0f30b6f, type: 2}
+  - {fileID: 11400000, guid: 9e49e2bc3f5082a4c87d352be11bec4d, type: 2}
+  - {fileID: 11400000, guid: 10b6bf4acc340404a89d41d66b531f61, type: 2}
 --- !u!1 &133125326
 GameObject:
   m_ObjectHideFlags: 0
@@ -789,7 +828,6 @@ GameObject:
   - component: {fileID: 154588803}
   - component: {fileID: 154588805}
   - component: {fileID: 154588804}
-  - component: {fileID: 154588806}
   m_Layer: 5
   m_Name: Animal2
   m_TagString: Untagged
@@ -853,25 +891,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 154588802}
   m_CullTransparentMesh: 0
---- !u!114 &154588806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 154588802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32ea67769af01394ea69d1fcba45aee0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: 10
-  nickName: "\u0412\u043E\u043B\u043A"
-  type: 3
-  hp: 100
-  power: 5
-  lvl: 1
-  isActive: 0
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -1032,7 +1051,6 @@ GameObject:
   - component: {fileID: 189987187}
   - component: {fileID: 189987189}
   - component: {fileID: 189987188}
-  - component: {fileID: 189987190}
   m_Layer: 5
   m_Name: Drone
   m_TagString: Untagged
@@ -1096,25 +1114,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 189987186}
   m_CullTransparentMesh: 0
---- !u!114 &189987190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 189987186}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32ea67769af01394ea69d1fcba45aee0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: 6
-  nickName: "\u0414\u0440\u043E\u043D"
-  type: 1
-  hp: 100
-  power: 5
-  lvl: 1
-  isActive: 0
 --- !u!1 &252815691
 GameObject:
   m_ObjectHideFlags: 0
@@ -1126,7 +1125,6 @@ GameObject:
   - component: {fileID: 252815692}
   - component: {fileID: 252815694}
   - component: {fileID: 252815693}
-  - component: {fileID: 252815695}
   m_Layer: 5
   m_Name: Animal2
   m_TagString: Untagged
@@ -1191,25 +1189,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 252815691}
   m_CullTransparentMesh: 0
---- !u!114 &252815695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 252815691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32ea67769af01394ea69d1fcba45aee0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: 5
-  nickName: "\u0412\u043E\u043B\u043A"
-  type: 3
-  hp: 100
-  power: 5
-  lvl: 1
-  isActive: 0
 --- !u!1 &263569161
 GameObject:
   m_ObjectHideFlags: 0
@@ -1221,7 +1200,6 @@ GameObject:
   - component: {fileID: 263569162}
   - component: {fileID: 263569164}
   - component: {fileID: 263569163}
-  - component: {fileID: 263569165}
   m_Layer: 5
   m_Name: Human
   m_TagString: Untagged
@@ -1285,25 +1263,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 263569161}
   m_CullTransparentMesh: 0
---- !u!114 &263569165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 263569161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32ea67769af01394ea69d1fcba45aee0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: 7
-  nickName: "\u0427\u0435\u043B\u043E\u0432\u0435\u043A"
-  type: 2
-  hp: 200
-  power: 10
-  lvl: 1
-  isActive: 1
 --- !u!1 &311881518
 GameObject:
   m_ObjectHideFlags: 0
@@ -1389,16 +1348,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 311881518}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32ea67769af01394ea69d1fcba45aee0, type: 3}
+  m_Script: {fileID: 11500000, guid: c3c5910b73542e342ba61abf50f515fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 2
   nickName: "\u0414\u0440\u043E\u043D"
-  type: 1
+  fraction: Player
   hp: 100
-  power: 5
-  lvl: 1
+  maxHp: 500
+  power: 100
+  powerLimit: 1
   isActive: 0
+  isDead: 0
 --- !u!1 &313066460
 GameObject:
   m_ObjectHideFlags: 0
@@ -1478,8 +1438,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 534669906}
-        m_MethodName: Select
-        m_Mode: 5
+        m_MethodName: SetCharacter
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1617,9 +1577,9 @@ GameObject:
   - component: {fileID: 534669905}
   - component: {fileID: 534669904}
   - component: {fileID: 534669903}
+  - component: {fileID: 534669908}
   - component: {fileID: 534669906}
   - component: {fileID: 534669907}
-  - component: {fileID: 534669908}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1700,16 +1660,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 534669902}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2de1cd6b52a7854ab5825aa692cd5d3, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ded1e747b011e9428d8882b5a5217d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  randFlag: 0
   firstRandom: {fileID: 111737707}
   secondRandom: {fileID: 1664508664}
   thirdRandom: {fileID: 551994196}
-  characterButton: {fileID: 313066460}
-  defendButton: {fileID: 1278792461}
-  attackButton: {fileID: 1771981741}
-  randFlag: 0
 --- !u!114 &534669907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1719,21 +1676,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 534669902}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bd8fd47e1bf32940981fb283140e2f7, type: 3}
+  m_Script: {fileID: 11500000, guid: 46f48ef1cc14f2445b9bf83f4c39b666, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDrone: {fileID: 311881522}
-  playerHuman: {fileID: 557982032}
-  playerAnimal: {fileID: 2123152403}
-  playerSecondDrone: {fileID: 1071809585}
-  playerSecondAnimal: {fileID: 252815695}
-  enemyDrone: {fileID: 189987190}
-  enemyHuman: {fileID: 263569165}
-  enemyAnimal: {fileID: 1486085759}
-  enemySecondDrone: {fileID: 1438609939}
-  enemySecondAnimal: {fileID: 154588806}
-  playerShield: {fileID: 1949018138}
-  enemyShield: {fileID: 1256951761}
 --- !u!114 &534669908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1757,6 +1702,7 @@ GameObject:
   - component: {fileID: 551994197}
   - component: {fileID: 551994199}
   - component: {fileID: 551994198}
+  - component: {fileID: 551994200}
   m_Layer: 5
   m_Name: 3rd
   m_TagString: Untagged
@@ -1820,6 +1766,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 551994196}
   m_CullTransparentMesh: 0
+--- !u!114 &551994200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 551994196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13877f12cadcb2846aed9256502408c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  card: {fileID: 11400000, guid: a1092298daaa9ea40aac7027ff1ec782, type: 2}
+  attacksCards:
+  - {fileID: 11400000, guid: 379c5998b5d3e61489e84f5345c3445c, type: 2}
+  - {fileID: 11400000, guid: 3bdc02400667e904c9105bd49f85c597, type: 2}
+  - {fileID: 11400000, guid: df964aec3435c8445b2ab3f63a9a14fd, type: 2}
+  charactersCards:
+  - {fileID: 11400000, guid: 59707c214ef6d3040ba5ee1aaa8c9d72, type: 2}
+  - {fileID: 11400000, guid: 1c7baefe85328a640aff67821246453e, type: 2}
+  - {fileID: 11400000, guid: a1092298daaa9ea40aac7027ff1ec782, type: 2}
+  defrndersCards:
+  - {fileID: 11400000, guid: 4b4e40db79b932f43bf90aa6b0f30b6f, type: 2}
+  - {fileID: 11400000, guid: 9e49e2bc3f5082a4c87d352be11bec4d, type: 2}
+  - {fileID: 11400000, guid: 10b6bf4acc340404a89d41d66b531f61, type: 2}
 --- !u!1 &557982028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1831,7 +1802,6 @@ GameObject:
   - component: {fileID: 557982029}
   - component: {fileID: 557982031}
   - component: {fileID: 557982030}
-  - component: {fileID: 557982032}
   m_Layer: 5
   m_Name: Human
   m_TagString: Untagged
@@ -1896,25 +1866,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 557982028}
   m_CullTransparentMesh: 0
---- !u!114 &557982032
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 557982028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32ea67769af01394ea69d1fcba45aee0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: 1
-  nickName: "\u0427\u0435\u043B\u043E\u0432\u0435\u043A"
-  type: 2
-  hp: 200
-  power: 10
-  lvl: 1
-  isActive: 1
 --- !u!1 &615206911
 GameObject:
   m_ObjectHideFlags: 0
@@ -2239,7 +2190,6 @@ GameObject:
   - component: {fileID: 1071809582}
   - component: {fileID: 1071809584}
   - component: {fileID: 1071809583}
-  - component: {fileID: 1071809585}
   m_Layer: 5
   m_Name: Drone2
   m_TagString: Untagged
@@ -2304,25 +2254,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1071809581}
   m_CullTransparentMesh: 0
---- !u!114 &1071809585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1071809581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32ea67769af01394ea69d1fcba45aee0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: 4
-  nickName: "\u0414\u0440\u043E\u043D"
-  type: 1
-  hp: 100
-  power: 5
-  lvl: 1
-  isActive: 0
 --- !u!1 &1168427459
 GameObject:
   m_ObjectHideFlags: 0
@@ -2569,7 +2500,6 @@ GameObject:
   - component: {fileID: 1256951760}
   - component: {fileID: 1256951763}
   - component: {fileID: 1256951762}
-  - component: {fileID: 1256951761}
   m_Layer: 5
   m_Name: Shield
   m_TagString: Untagged
@@ -2597,23 +2527,6 @@ RectTransform:
   m_AnchoredPosition: {x: -193, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1256951761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1256951759}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a36016043af76940b3dd7d9b4dead1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameDef: "\u042D\u043D\u0435\u0440\u0433\u0435\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0439
-    \u0449\u0438\u0442"
-  typeDef: 0
-  countDef: 50
-  isActive: 0
 --- !u!114 &1256951762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2730,8 +2643,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 534669906}
-        m_MethodName: Select
-        m_Mode: 5
+        m_MethodName: SetDefend
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2790,7 +2703,6 @@ GameObject:
   - component: {fileID: 1438609936}
   - component: {fileID: 1438609938}
   - component: {fileID: 1438609937}
-  - component: {fileID: 1438609939}
   m_Layer: 5
   m_Name: Drone2
   m_TagString: Untagged
@@ -2854,25 +2766,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1438609935}
   m_CullTransparentMesh: 0
---- !u!114 &1438609939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1438609935}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32ea67769af01394ea69d1fcba45aee0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: 9
-  nickName: "\u0414\u0440\u043E\u043D"
-  type: 1
-  hp: 100
-  power: 5
-  lvl: 1
-  isActive: 0
 --- !u!1 &1486085755
 GameObject:
   m_ObjectHideFlags: 0
@@ -2884,7 +2777,6 @@ GameObject:
   - component: {fileID: 1486085756}
   - component: {fileID: 1486085758}
   - component: {fileID: 1486085757}
-  - component: {fileID: 1486085759}
   m_Layer: 5
   m_Name: Animal
   m_TagString: Untagged
@@ -2948,25 +2840,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1486085755}
   m_CullTransparentMesh: 0
---- !u!114 &1486085759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1486085755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32ea67769af01394ea69d1fcba45aee0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: 8
-  nickName: "\u0412\u043E\u043B\u043A"
-  type: 3
-  hp: 100
-  power: 5
-  lvl: 1
-  isActive: 0
 --- !u!1 &1637321233
 GameObject:
   m_ObjectHideFlags: 0
@@ -3156,6 +3029,7 @@ GameObject:
   - component: {fileID: 1664508665}
   - component: {fileID: 1664508667}
   - component: {fileID: 1664508666}
+  - component: {fileID: 1664508668}
   m_Layer: 5
   m_Name: 2nd
   m_TagString: Untagged
@@ -3219,6 +3093,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1664508664}
   m_CullTransparentMesh: 0
+--- !u!114 &1664508668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664508664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13877f12cadcb2846aed9256502408c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  card: {fileID: 11400000, guid: 1c7baefe85328a640aff67821246453e, type: 2}
+  attacksCards:
+  - {fileID: 11400000, guid: 379c5998b5d3e61489e84f5345c3445c, type: 2}
+  - {fileID: 11400000, guid: 3bdc02400667e904c9105bd49f85c597, type: 2}
+  - {fileID: 11400000, guid: df964aec3435c8445b2ab3f63a9a14fd, type: 2}
+  charactersCards:
+  - {fileID: 11400000, guid: 59707c214ef6d3040ba5ee1aaa8c9d72, type: 2}
+  - {fileID: 11400000, guid: 1c7baefe85328a640aff67821246453e, type: 2}
+  - {fileID: 11400000, guid: a1092298daaa9ea40aac7027ff1ec782, type: 2}
+  defrndersCards:
+  - {fileID: 11400000, guid: 4b4e40db79b932f43bf90aa6b0f30b6f, type: 2}
+  - {fileID: 11400000, guid: 9e49e2bc3f5082a4c87d352be11bec4d, type: 2}
+  - {fileID: 11400000, guid: 10b6bf4acc340404a89d41d66b531f61, type: 2}
 --- !u!1 &1771981741
 GameObject:
   m_ObjectHideFlags: 0
@@ -3298,8 +3197,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 534669906}
-        m_MethodName: Select
-        m_Mode: 5
+        m_MethodName: SetAttack
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3358,7 +3257,6 @@ GameObject:
   - component: {fileID: 1949018137}
   - component: {fileID: 1949018140}
   - component: {fileID: 1949018139}
-  - component: {fileID: 1949018138}
   m_Layer: 5
   m_Name: Shield
   m_TagString: Untagged
@@ -3386,23 +3284,6 @@ RectTransform:
   m_AnchoredPosition: {x: 186, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1949018138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1949018136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a36016043af76940b3dd7d9b4dead1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameDef: "\u042D\u043D\u0435\u0440\u0433\u0435\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0439
-    \u0449\u0438\u0442"
-  typeDef: 0
-  countDef: 50
-  isActive: 0
 --- !u!114 &1949018139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3528,7 +3409,6 @@ GameObject:
   - component: {fileID: 2123152400}
   - component: {fileID: 2123152402}
   - component: {fileID: 2123152401}
-  - component: {fileID: 2123152403}
   m_Layer: 5
   m_Name: Animal
   m_TagString: Untagged
@@ -3593,22 +3473,3 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2123152399}
   m_CullTransparentMesh: 0
---- !u!114 &2123152403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2123152399}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32ea67769af01394ea69d1fcba45aee0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: 3
-  nickName: "\u0412\u043E\u043B\u043A"
-  type: 3
-  hp: 100
-  power: 5
-  lvl: 1
-  isActive: 0

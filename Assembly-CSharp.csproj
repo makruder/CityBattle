@@ -53,11 +53,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Battle.cs" />
-     <Compile Include="Assets\Scripts\Character.cs" />
-     <Compile Include="Assets\Scripts\Defenders.cs" />
+     <Compile Include="Assets\Scripts\Battle\BattleController.cs" />
+     <Compile Include="Assets\Scripts\Battle\BattleTimer.cs" />
+     <Compile Include="Assets\Scripts\Characters\Unit.cs" />
      <Compile Include="Assets\Scripts\LogMessage.cs" />
-     <Compile Include="Assets\Scripts\SelectType.cs" />
+     <Compile Include="Assets\Scripts\Select\Attack.cs" />
+     <Compile Include="Assets\Scripts\Select\Card.cs" />
+     <Compile Include="Assets\Scripts\Select\Characters.cs" />
+     <Compile Include="Assets\Scripts\Select\Defend.cs" />
+     <Compile Include="Assets\Scripts\Select\Item.cs" />
+     <Compile Include="Assets\Scripts\Select\SelectRow.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>D:/Unity/CityBattle/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
